@@ -1,0 +1,41 @@
+---
+import type { Product } from "../data/products";
+
+type Props = {
+	product: Product;
+	priority?: boolean;
+};
+
+const { product, priority = false } = Astro.props;
+---
+
+<article
+	class="group flex flex-col overflow-hidden rounded border border-ink/10 bg-ink/[0.03] shadow-[0_0_0_1px_rgba(0,0,0,0.2)] transition hover:border-accent/30"
+>
+	<div class="relative aspect-[3/4] w-full overflow-hidden">
+		<picture>
+			<source srcset={`${product.image800} 800w, ${product.image1200} 1200w`} sizes="(min-width: 1024px) 33vw, 90vw" type="image/webp" />
+			<img
+				src={product.image1200}
+				alt={product.alt}
+				loading={priority ? "eager" : "lazy"}
+				decoding="async"
+				fetchpriority={priority ? "high" : "auto"}
+				class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+			/>
+		</picture>
+		<div
+			class="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/90 via-void/20 to-transparent"
+			aria-hidden="true"
+		/>
+		<h2 class="absolute bottom-0 left-0 p-4 font-display text-lg font-bold leading-tight sm:p-5 sm:text-xl">
+			{product.title}
+		</h2>
+	</div>
+	<div class="flex flex-1 flex-col gap-3 p-4 sm:p-5">
+		<p class="font-body text-ink-dim leading-relaxed">{product.blurb}</p>
+		<a class="cult-link focus-ring mt-auto w-fit self-start text-sm font-semibold" href="/contact">
+			Inquire / stockists
+		</a>
+	</div>
+</article>

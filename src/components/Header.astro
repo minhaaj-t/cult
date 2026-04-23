@@ -1,0 +1,22 @@
+---
+const path = Astro.url.pathname;
+const link = (href: string) =>
+	path === href || (href !== "/" && path.startsWith(href)) ? "text-ink" : "text-ink-dim";
+---
+
+<a href="#main" class="skip-to-main">Skip to content</a>
+<header
+	class="sticky top-0 z-50 border-b border-ink/10 bg-void/80 font-display text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-md"
+>
+	<div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+		<a href="/" class="focus-ring group rounded text-base font-extrabold tracking-tight text-ink sm:text-lg">
+			<span class="text-accent">Cult</span>Scribe
+		</a>
+		<nav class="flex flex-wrap items-center justify-end gap-4 sm:gap-6" aria-label="Primary">
+			<a class:list={["focus-ring rounded py-1 transition", link("/")]} href="/"> Home </a>
+			<a class:list={["focus-ring rounded py-1 transition", link("/about")]} href="/about"> About </a>
+			<a class:list={["focus-ring rounded py-1 transition", link("/gallery")]} href="/gallery"> Gallery </a>
+			<a class:list={["focus-ring rounded py-1 transition", link("/contact")]} href="/contact"> Contact </a>
+		</nav>
+	</div>
+</header>

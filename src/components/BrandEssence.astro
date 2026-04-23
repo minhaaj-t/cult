@@ -1,0 +1,26 @@
+---
+const pillars = [
+	"Rebellion",
+	"Creativity",
+	"Timelessness",
+	"Art",
+	"Music culture",
+] as const;
+---
+
+<section class="border-y border-ink/10 bg-void-2/30 px-4 py-16 sm:px-6" aria-labelledby="essence-heading">
+	<div class="mx-auto max-w-4xl text-center">
+		<h2 id="essence-heading" class="font-display text-2xl font-bold uppercase tracking-widest text-ink sm:text-3xl">
+			Brand essence
+		</h2>
+		<ul class="mt-10 flex flex-wrap justify-center gap-3 sm:gap-4" role="list">
+			{pillars.map((p) => (
+				<li>
+					<span class="inline-block border border-ink/15 bg-ink/5 px-4 py-2 font-display text-sm font-semibold tracking-wide text-ink">
+						{p}
+					</span>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import BrandEssence from "../components/BrandEssence.astro";
+import { SITE_NAME } from "../consts";
+---
+
+<BaseLayout
+	title={`${SITE_NAME} — Where Legends Live Forever`}
+	description="CultScribe: notebooks and stationery for bold creators — rebellion, art, and music culture on every page."
+>
+	<Hero
+		title="Where legends live forever."
+		subtitle="A tribute to the timeless spirit of rock and metal, carried into everyday creativity."
+	/>
+	<section class="mx-auto max-w-3xl px-4 py-20 sm:px-6" aria-labelledby="home-story">
+		<h2 id="home-story" class="sr-only">Our story</h2>
+		<p class="font-body text-2xl leading-relaxed sm:text-3xl">
+			CultScribe was born from a love for iconic rock and metal bands whose music shaped generations. We believe
+			that legends never die—they continue to inspire, create, and live within us. Our notebooks blend aesthetic
+			design with cultural history, inspiring students and creators to <span class="text-ink not-italic">write boldly</span> and think freely.
+		</p>
+		<div class="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+			<a class="cult-btn-primary focus-ring" href="/gallery">View the collection</a>
+			<a class="cult-btn focus-ring" href="/about">Read the full story</a>
+		</div>
+	</section>
+	<BrandEssence />
+	<section class="mx-auto max-w-2xl px-4 py-24 text-center sm:px-6">
+		<p class="font-display text-2xl font-bold uppercase leading-snug tracking-wide text-ink/90 sm:text-3xl">
+			Legends never die. They live on in every line you put on paper.
+		</p>
+		<a class="cult-btn-primary focus-ring mt-10" href="/contact">Get in touch</a>
+	</section>
+</BaseLayout>

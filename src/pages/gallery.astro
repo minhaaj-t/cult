@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { products } from "../data/products";
+import { SITE_NAME } from "../consts";
+---
+
+<BaseLayout
+	title={`Collection — ${SITE_NAME}`}
+	description="Browse CultScribe notebook designs — where legends live forever, on paper and on the shelf."
+	ogImage="/images/gallery/gnr-18x24-og.webp"
+>
+	<header class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+		<h1 class="font-display text-4xl font-extrabold sm:text-5xl">The collection</h1>
+		<p class="mt-6 max-w-2xl text-xl leading-relaxed text-ink-dim">
+			Every cover is a conversation with music culture. Below are a few of our 18×24cm formats — more formats and
+			stockist info on request.
+		</p>
+	</header>
+	<div class="mx-auto grid max-w-6xl gap-10 px-4 pb-24 sm:px-6 md:grid-cols-2">
+		{products.map((p, i) => <ProductCard product={p} priority={i < 2} />)}
+	</div>
+</BaseLayout>
