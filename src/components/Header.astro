@@ -9,8 +9,14 @@ const link = (href: string) =>
 	class="sticky top-0 z-50 border-b border-ink/10 bg-void/80 font-display text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-md"
 >
 	<div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-		<a href="/" class="focus-ring group rounded text-base font-extrabold tracking-tight text-ink sm:text-lg">
-			<span class="text-accent">Cult</span>Scribe
+		<a href="/" class="focus-ring group block shrink-0 rounded py-0.5" aria-label="CultScribe home">
+			<img
+				src="/logo.png"
+				alt="CultScribe — Raw. Real. Written."
+				class="h-7 w-auto max-h-9 max-w-[min(100%,220px)] object-contain object-left sm:h-9 sm:max-h-10 sm:max-w-[260px]"
+				loading="eager"
+				decoding="async"
+			/>
 		</a>
 		<nav class="flex flex-wrap items-center justify-end gap-4 sm:gap-6" aria-label="Primary">
 			<a class:list={["focus-ring rounded py-1 transition", link("/")]} href="/"> Home </a>
