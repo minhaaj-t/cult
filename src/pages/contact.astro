@@ -65,10 +65,16 @@ import { SITE_NAME, CONTACT_EMAIL } from "../consts";
 					class="focus-ring mt-2 w-full border border-ink/15 bg-ink/5 px-4 py-3 font-body text-ink placeholder:text-ink-dim/50"
 					placeholder="How can we help?"></textarea>
 			</div>
-			<button type="submit" class="cult-btn-primary focus-ring w-full sm:w-auto">Open in your email app</button>
+			<button
+				type="submit"
+				class="cult-btn-primary focus-ring w-full sm:w-auto"
+				aria-describedby="form-hint"
+			>
+				Submit
+			</button>
 			<p class="text-sm text-ink-dim/80" id="form-hint" role="status" aria-live="polite">
-				Submitting opens an email draft to {CONTACT_EMAIL} with your message. Replace the address in code when you have a
-				production domain.
+				Submit opens your email app with a draft to {CONTACT_EMAIL}. Update that address in code when you use a production
+				domain.
 			</p>
 		</form>
 	</div>
